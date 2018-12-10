@@ -7,6 +7,7 @@ services:
     volumes:
       - ./conf/squid.conf:/etc/squid/squid.conf
       - ./conf/whitelist_dstdomain.conf:/etc/squid/whitelist_dstdomain.conf
+      - ./conf/whitelist_url_regex.conf:/etc/squid/whitelist_url_regex.conf
       - ./log/:/var/log/squid
     ports:
       - "${SQUID_BIND_IP_PORT:-127.0.0.1:3128}:3128"
