@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  squid:
+    build:
+      context: ./
+    volumes:
+      - ./conf/squid.conf:/etc/squid/squid.conf
+      - ./log/:/var/log/squid
+    ports:
+      - "${SQUID_BIND_IP_PORT:-127.0.0.1:3128}:3128"
+    restart: always
