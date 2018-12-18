@@ -4,6 +4,9 @@ services:
   squid:
     build:
       context: ./
+      args:
+        - http_proxy
+        - https_proxy
     volumes:
       - ./conf/squid.conf:/etc/squid/squid.conf
       - ./conf/whitelist_dstdomain.conf:/etc/squid/whitelist_dstdomain.conf
